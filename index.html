@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekolojik Kredi Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Sol Menü -->
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="logo.png" alt="Ekolojik Kredi Logo">
+                <h2>Ekolojik Kredi</h2>
+            </div>
+            <ul>
+                <li><a href="#" onclick="showInfo('ekolojikKredi')">Ekolojik Kredi</a></li>
+                <li><a href="#" onclick="showInfo('geriDonusum')">Geri Dönüşüm Nedir?</a></li>
+                <li><a href="#" onclick="showInfo('kayitOl')">Kayıt Ol</a></li>
+                <li><a href="#" onclick="showInfo('veriGiris')">Veri Girişi</a></li>
+                <li><a href="#" onclick="showInfo('veriGor')">Veri Görüntüle</a></li>
+                <li><a href="#" onclick="showInfo('hazirlayanlar')">Hazırlayanlar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sağ Alan (Ana İçerik) -->
+        <div class="content">
+            <!-- Ekolojik Kredi Bölümü -->
+            <div id="ekolojikKredi" class="info-section">
+                <h2>Ekolojik Kredi Nedir?</h2>
+                <p>Ekolojik Kredi, geri dönüşüm yapan bireylerin çevreye katkılarını ödüllendiren bir sistemdir. Atık türlerine göre puan kazanılır ve bu puanlar çeşitli ödüllere dönüştürülebilir.</p>
+            </div>
+
+            <!-- Geri Dönüşüm Nedir? Bölümü -->
+            <div id="geriDonusum" class="info-section">
+                <h2>Geri Dönüşüm Nedir?</h2>
+                <p>Geri dönüşüm, atıkların yeniden işlenerek kullanılabilir hale getirilmesi işlemidir. Bu sayede doğal kaynakların korunmasına yardımcı olur ve çevreyi korur. Atıklar doğru şekilde ayrıştırıldığında, ekonomiye de katkı sağlar.</p>
+            </div>
+
+            <!-- Kayıt Ol Bölümü -->
+            <div id="kayitOl" class="info-section">
+                <h2>Öğrenci Kayıt</h2>
+                <form id="registerForm">
+                    <label for="studentName">Adı:</label>
+                    <input type="text" id="studentName" required>
+                    <label for="studentSurname">Soyadı:</label>
+                    <input type="text" id="studentSurname" required>
+                    <label for="studentNumber">Öğrenci Numarası:</label>
+                    <input type="text" id="studentNumber" required>
+                    <label for="studentEmail">E-posta:</label>
+                    <input type="email" id="studentEmail" required>
+                    <button type="button" onclick="registerStudent()">Kaydet</button>
+                </form>
+            </div>
+
+            <!-- Veri Girişi Bölümü -->
+            <div id="veriGiris" class="info-section">
+                <h2>Atık Veri Girişi</h2>
+                <form id="wasteEntryForm">
+                    <label for="studentNumber">Öğrenci Numarası:</label>
+                    <input type="text" id="studentNumber" required>
+
+                    <label for="wasteType">Atık Türü:</label>
+                    <select id="wasteType">
+                        <option value="plastik">Plastik</option>
+                        <option value="cam">Cam</option>
+                        <option value="pil">Pil</option>
+                        <option value="elektronik">Elektronik</option>
+                        <option value="metal">Metal</option>
+                        <option value="kagit">Kağıt</option>
+                        <option value="yag">Yağ</option>
+                        <option value="tekstil">Tekstil</option>
+                    </select>
+
+                    <label for="wasteWeight">Atık Miktarı (kg):</label>
+                    <input type="number" id="wasteWeight" required>
+
+                    <label for="sortingStatus">Sıralama Durumu:</label>
+                    <select id="sortingStatus">
+                        <option value="sorted">Ayrıştırıldı</option>
+                        <option value="unsorted">Ayrıştırılmadı</option>
+                    </select>
+
+                    <button type="button" onclick="submitData()">Veri Kaydet</button>
+                </form>
+            </div>
+
+            <!-- Veri Görüntüle Bölümü -->
+            <div id="veriGor" class="info-section">
+                <h2>Öğrenci Verisi Görüntüle</h2>
+                <label for="viewStudentNumber">Öğrenci Numarası:</label>
+                <input type="text" id="viewStudentNumber">
+                <button type="button" onclick="viewStudentData()">Verileri Görüntüle</button>
+                <div id="studentData"></div>
+            </div>
+
+            <!-- Hazırlayanlar Bölümü -->
+            <div id="hazirlayanlar" class="info-section">
+                <h2>Hazırlayanlar</h2>
+                <p><strong>Danışman Öğretmen:</strong> Osman Onuk</p>
+                <p><strong>Öğrenciler:</strong> Muhammedcan Arslanparçası, Bilal Yiğit Tezcan, Yağız Efe Yılmaz</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
